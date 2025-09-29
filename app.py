@@ -4,7 +4,7 @@ from indic_transliteration import sanscript
 from indic_transliteration.sanscript import transliterate
 from aksharamukha.transliterate import process
 
-st.title("Kannada → Hindi → Phonetics Converter")
+st.title("Learn Hindi using Kannada script- ಕನ್ನಡ  ಅಕ್ಷರ  ಬಳಸಿ   ಹಿಂದಿ  ಕಲಿಯಿರಿ")
 
 text = st.text_area("Enter Kannada text")
 
