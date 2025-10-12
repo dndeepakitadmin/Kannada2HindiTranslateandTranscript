@@ -17,7 +17,7 @@ except Exception:
 # ✅ Streamlit Page Setup
 # -----------------------------------------------------------
 st.set_page_config(page_title="Learn Hindi using Kannada Script", layout="centered")
-st.title("🇮🇳 Learn Hindi using Kannada Script - ಕನ್ನಡ ಅಕ್ಷರ ಬಳಸಿ ಹಿಂದಿ ಕಲಿಯಿರಿ")
+st.title("Learn Hindi using Kannada Script - ಕನ್ನಡ ಅಕ್ಷರ ಬಳಸಿ ಹಿಂದಿ ಕಲಿಯಿರಿ")
 st.markdown("Type Kannada sentences below and see Hindi in Kannada letters, Hindi script, and English phonetics.")
 
 # -----------------------------------------------------------
