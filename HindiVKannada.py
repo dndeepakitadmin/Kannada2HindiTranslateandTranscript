@@ -1,6 +1,5 @@
 import streamlit as st
 from deep_translator import GoogleTranslator
-from aksharamukha.transliterate import transliterate as akshara_transliterate
 from indic_transliteration import sanscript
 from indic_transliteration.sanscript import transliterate as indic_transliterate
 
@@ -19,8 +18,8 @@ def translate_text(text):
     # Step 2: Hindi → English phonetic
     hindi_phonetic = indic_transliterate(hindi_translation, sanscript.DEVANAGARI, sanscript.ITRANS)
 
-    # Step 3: Hindi → Kannada script (phonetically)
-    hindi_in_kannada = akshara_transliterate.process('Devanagari', 'Kannada', hindi_translation)
+    # Step 3: Hindi → Kannada-like letters (approx phonetic using ITRANS)
+    hindi_in_kannada = indic_transliterate(hindi_translation, sanscript.DEVANAGARI, sanscript.KANNADA)
 
     return hindi_in_kannada, hindi_phonetic, hindi_translation
 
@@ -38,7 +37,7 @@ if st.button("Translate"):
             st.markdown("### 🔹 Translation Results")
             st.markdown(f"**Kannada Input:** {text}")
             st.markdown(f"**Hindi in Kannada Letters:** {hindi_in_kannada}")
-            st.markdown(f"**English Phonetic:** {hindi_phonetic}")
+            st.markdown(f"**English Phonetic:** `{hindi_phonetic}`")
             st.markdown(f"**Hindi Translation (Devanagari):** {hindi_translation}")
 
         except Exception as e:
